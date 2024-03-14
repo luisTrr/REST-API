@@ -12,10 +12,10 @@
       <div class="w-full mt-3 p-3">
         <h1 class="text-xl">{{ character.name }}</h1>
         <article class="text-xs">{{ character.status}} - {{character.species}}</article>
-        <article class="text-xs mt-10 text-try">Last known location</article>
+        <article class="text-xs mt-10 text-try">Last known location:</article>
         <strong class="text-sm">{{character.location.name}}</strong>
-        <article class="text-xs mt-5 text-try">Last known location</article>
-        <strong class="text-sm">{{character.location.url | slice: 22 }}</strong> </div>
+        <article class="text-xs mt-5 text-try">First seen in:</article>
+        <strong class="text-sm">{{character.origin.name }}</strong> </div>
     </li>
   </ul>
 
@@ -39,6 +39,9 @@
       <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
     </svg>
     </button>
+    <select  (change)="changePageSelect($event)">
+      <option *ngFor="let page of pages" [value]="page">{{ page }}</option>
+    </select>
     <span class="mx-2 text-try">Página {{currentPage}} de {{totalPages}}</span>
     <button
       class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4"

@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 export class RickmortyService {
 
   private apiUrl = 'https://rickandmortyapi.com/api/character';
-  private urlEpisodio = 'https://rickandmortyapi.com/api/episode';
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +18,4 @@ export class RickmortyService {
     return this.http.get(`${this.apiUrl}/?page=${page}`);
   }
 
-  getAllEpisodio(){
-    return this.http.get(this.urlEpisodio);
-  }
 }

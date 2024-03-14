@@ -28,20 +28,6 @@ export class PersonajesComponent implements OnInit {
     });
   }
 
-  nextPage() {
-    if (this.currentPage < this.totalPages) {
-      this.currentPage++;
-      this.loadCharacters();
-    }
-  }
-
-  prevPage() {
-    if (this.currentPage > 1) {
-      this.currentPage--;
-      this.loadCharacters();
-    }
-  }
-
   changePage(page: number) {
     this.currentPage = page;
     this.loadCharacters();
@@ -65,11 +51,26 @@ export class PersonajesComponent implements OnInit {
     this.currentPage = parseInt(selectedPage);
     this.loadCharacters();
   }
+  
   firstPage() {
     this.currentPage = 1;
     this.loadCharacters();
   }
 
+  
+  prevPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      this.loadCharacters();
+    }
+  }
+  
+  nextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      this.loadCharacters();
+    }
+  }
   lastPage() {
     this.currentPage = this.totalPages;
     this.loadCharacters();

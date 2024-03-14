@@ -1,7 +1,7 @@
 <section class="p-5">
   <div class="grid grid-cols-2">
     <p></p>
-    <input type="text" [(ngModel)]="searchName" (keyup)="filterCharacters()" placeholder="Buscar por nombre" class="w-full rounded-lg p-3 bg-try">
+    <input type="text" [(ngModel)]="searchName" (keyup)="filterCharacters()" placeholder="Buscar por nombre" class="w-full rounded-lg p-3 bg-try  font-bold text-gray-700">
   </div>
 
   <ul class="mt-3 mb-3 grid grid-cols-1 md:grid-cols-3 uppercase gap-x-8 font-medium items-center text-try">
@@ -25,14 +25,19 @@
       (click)="firstPage()"
       [disabled]="currentPage === 1"
     >
-      Primera página
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+      <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+    </svg>
     </button>
     <button
       class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4"
       (click)="prevPage()"
       [disabled]="currentPage === 1"
     >
-      Anterior
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+    </svg>
     </button>
     <span class="mx-2 text-try">Página {{currentPage}} de {{totalPages}}</span>
     <button
@@ -40,14 +45,19 @@
       (click)="nextPage()"
       [disabled]="currentPage === totalPages"
     >
-      Siguiente
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
+    </svg>
     </button>
     <button
       class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r-md"
       (click)="lastPage()"
       [disabled]="currentPage === totalPages"
     >
-      Última página
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+      <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708"/>
+      <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708"/>
+    </svg>
     </button>
   </div>
 </section>

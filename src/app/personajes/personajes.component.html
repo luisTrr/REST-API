@@ -1,0 +1,53 @@
+<section class="p-5">
+  <div class="grid grid-cols-2">
+    <p></p>
+    <input type="text" [(ngModel)]="searchName" (keyup)="filterCharacters()" placeholder="Buscar por nombre" class="w-full rounded-lg p-3 bg-try">
+  </div>
+
+  <ul class="mt-3 mb-3 grid grid-cols-1 md:grid-cols-3 uppercase gap-x-8 font-medium items-center text-try">
+    <li class="grid grid-cols-2 rounded-2xl mt-3 px-3 col-auto bg-secondary w-full h-50 hover:scale-100 hover:opacity-70 transition" *ngFor="let character of characters">
+      <div>
+        <img src="{{character.image}}" alt="" class="w-60 mt-6 mb-3 mx-2">
+      </div>
+      <div class="w-full mt-3 p-3">
+        <h1 class="text-xl">{{ character.name }}</h1>
+        <article class="text-xs">{{ character.status}} - {{character.species}}</article>
+        <article class="text-xs mt-10 text-try">Last known location</article>
+        <strong class="text-sm">{{character.location.name}}</strong>
+        <article class="text-xs mt-5 text-try">Last known location</article>
+        <strong class="text-sm">{{character.location.url | slice: 22 }}</strong> </div>
+    </li>
+  </ul>
+
+  <div class="flex justify-center">
+    <button
+      class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l-md"
+      (click)="firstPage()"
+      [disabled]="currentPage === 1"
+    >
+      Primera página
+    </button>
+    <button
+      class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4"
+      (click)="prevPage()"
+      [disabled]="currentPage === 1"
+    >
+      Anterior
+    </button>
+    <span class="mx-2 text-try">Página {{currentPage}} de {{totalPages}}</span>
+    <button
+      class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4"
+      (click)="nextPage()"
+      [disabled]="currentPage === totalPages"
+    >
+      Siguiente
+    </button>
+    <button
+      class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r-md"
+      (click)="lastPage()"
+      [disabled]="currentPage === totalPages"
+    >
+      Última página
+    </button>
+  </div>
+</section>

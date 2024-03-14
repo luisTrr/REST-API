@@ -1,0 +1,23 @@
+<div class="flex justify-center">
+  <button
+    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l-md"
+    (click)="firstPage()">
+    Primera página
+  </button>
+  <button
+    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4"
+    (click)="previousPage()">
+    Anterior
+  </button>
+  <span class="mx-2 text-try">Página {{currentPage}} de {{totalPages}}</span>
+  <button
+    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4"
+    (click)="nextPage()">
+    Siguiente
+  </button>
+  <button
+    class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r-md"
+    (click)="lastPage()">
+    Última página
+  </button>
+</div>
